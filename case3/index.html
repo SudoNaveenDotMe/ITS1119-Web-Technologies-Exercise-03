@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case 3</title>
+    <style>
+        body { height: 200vh;}
+
+        .fixed-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            
+            width: 300px;
+            height: 300px;
+            
+            border: 15px solid #aaa; 
+            outline: 15px solid red; 
+            background-color: purple;
+            border-radius: 50%; 
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: sans-serif;
+            font-size: 2rem;
+            z-index: 100;
+        }
+        
+        .fixed-container::after {
+            content: '';
+            position: absolute;
+            top: -15px; left: -15px; right: -15px; bottom: -15px;
+            border: 15px solid red;
+            border-radius: 50%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed-container">
+        Hello
+    </div>
+</body>
+</html>
